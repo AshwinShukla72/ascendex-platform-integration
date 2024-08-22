@@ -12,6 +12,6 @@ const server = http.createServer(app);
 // Start server
 setImmediate(() => {
 	server.listen(config.apiRoot, () => {
-		console.log(`Express server listening on http:localhost:${config.apiRoot}`);
+		console.log(`Express server listening on http://localhost:${config.apiRoot}`);
 	});
 });

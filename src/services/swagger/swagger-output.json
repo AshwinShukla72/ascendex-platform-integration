@@ -1,0 +1,85 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Crypto Trade Platforms APIs",
+		"description": "a set of backend APIs to retrieve the orderbook, current price, and candles \nfrom various cryptocurrency exchanges such as \nBinance, MEXC, Gate.io, KuCoin, and AscendEX.",
+		"version": "1.0.0"
+	},
+	"host": "localhost:9000",
+	"basePath": "/",
+	"schemes": ["http"],
+	"paths": {
+		"/v1/markets/klines": {
+			"get": {
+				"tags": ["markets"],
+				"summary": "Get kline data from various platforms",
+				"description": "API to fetch kline data from various platforms",
+				"parameters": [
+					{
+						"name": "platform",
+						"in": "query",
+						"type": "string"
+					},
+					{
+						"name": "symbol",
+						"in": "query",
+						"type": "string"
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+		},
+		"/v1/markets/order-book": {
+			"get": {
+				"tags": ["markets"],
+				"summary": "Get order books data from various platforms",
+				"description": "API to fetch order books data from various platforms",
+				"parameters": [
+					{
+						"name": "platform",
+						"in": "query",
+						"type": "string"
+					},
+					{
+						"name": "symbol",
+						"in": "query",
+						"type": "string"
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+		},
+		"/v1/markets/trade-pair": {
+			"get": {
+				"tags": ["markets"],
+				"summary": "Get current price of trade pairs for various platforms",
+				"description": "API to fetch current price of trade pairs for various platforms",
+				"parameters": [
+					{
+						"name": "platform",
+						"in": "query",
+						"type": "string"
+					},
+					{
+						"name": "symbol",
+						"in": "query",
+						"type": "string"
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+		}
+	}
+}
