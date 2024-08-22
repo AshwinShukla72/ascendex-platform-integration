@@ -57,7 +57,7 @@
 				}
 			}
 		},
-		"/v1/markets/trade-pair": {
+		"/v1/markets/current-price": {
 			"get": {
 				"tags": ["markets"],
 				"summary": "Get current price of trade pairs for various platforms",

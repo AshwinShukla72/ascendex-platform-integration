@@ -9,6 +9,6 @@ router.use(validate(marketDataSchema));
 
 router.get('/klines', getKlineData);
 router.get('/order-book', getOrderBooksData);
-router.get('/trade-pair', getCurrentPrice);
+router.get('/current-price', getCurrentPrice);
 
 export default router;

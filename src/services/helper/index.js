@@ -1,10 +1,8 @@
 import axios from 'axios';
 // Axios fetchDataHelper
-export const fetchDataHelper = async (url, req, res) => {
+export const fetchDataHelper = async (url, query, res) => {
 	const functionName = 'fetchDataHelper';
 	try {
-		const { interval, symbol } = req.query;
-		const query = { interval, symbol };
 		const apiConfig = {
 			url: `${url}?${new URLSearchParams(query).toString()}`,
 			method: 'GET',

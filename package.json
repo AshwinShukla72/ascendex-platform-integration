@@ -4,7 +4,7 @@
   "main": "./src/app.js",
   "type": "module",
   "scripts": {
-    "dev:check": "npx @biomejs/biome check --write ./src",
+    "dev:check": "npx @biomejs/biome check --fix --unsafe ./src",
     "dev:server": "npm run dev:check && nodemon --watch src",
     "gen:docs": "node ./src/services/swagger/swagger.js",
     "test": "echo \"Error: no test specified\" && exit 1"
