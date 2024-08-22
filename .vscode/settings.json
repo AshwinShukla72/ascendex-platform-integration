@@ -1,0 +1,5 @@
+{
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.automationProfile.linux": {}
+}
