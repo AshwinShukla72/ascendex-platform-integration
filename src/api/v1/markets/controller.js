@@ -13,7 +13,7 @@ export const getKlineData = async (req, res) => {
 		// #swagger.description = 'API to fetch kline data from various platforms'
 		const service = platformServices[req.query.platform];
 		const { symbol } = req.query;
-		return await service.klineData(req, res);
+		return await service().klineData(req, res);
 	} catch (error) {
 		console.log(`Error in ${functionName} ->`, console.log(error));
 		return res.status(500).json({ error: true, message: 'Something went wrong' });
@@ -28,7 +28,7 @@ export const getCurrentPrice = async (req, res) => {
 		// #swagger.description = 'API to fetch current price of trade pairs for various platforms'
 		const service = platformServices[req.query.platform];
 		const { symbol } = req.query;
-		return await service.currentPrice(req, res);
+		return await service().currentPrice(req, res);
 	} catch (error) {
 		console.log(`Error in ${functionName} ->`, console.log(error));
 		return res.status(500).json({ error: true, message: 'Something went wrong' });
@@ -43,7 +43,7 @@ export const getOrderBooksData = async (req, res) => {
 		// #swagger.description = 'API to fetch order books data from various platforms'
 		const service = platformServices[req.query.platform];
 		const { symbol } = req.query;
-		return await service.orderBook(req, res);
+		return await service().orderBook(req, res);
 	} catch (error) {
 		console.log(`Error in ${functionName} ->`, console.log(error));
 		return res.status(500).json({ error: true, message: 'Something went wrong' });

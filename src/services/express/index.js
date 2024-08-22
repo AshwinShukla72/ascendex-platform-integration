@@ -10,22 +10,23 @@ import swaggerUI from 'swagger-ui-express';
 import swaggerDoc from '../swagger/swagger-output.json' assert { type: 'json' };
 import 'dotenv/config';
 
-export default routes => {
-	const app = express();
-
+export const initializeMiddleware = app => {
 	app.use(express.json());
 	app.use(compression());
-	
 	app.use(cookieParser());
 	app.use(express.urlencoded({ extended: true }));
-	
-  app.use(helmet());
-  app.use(cors())
-	// app.use(cors(config.corsConfig));
+	app.use(helmet());
+	app.use(cors());
 	app.use(morgan('dev'));
-  app.get('/health-check', (req, res) => {
-    return res.status(200).json({ success: true, message: 'Server working fine'})
-  })
+};
+
+export default routes => {
+	const app = express();
+	initializeMiddleware(app);
+	app.get('/health-check', (req, res) => {
+		return res.status(200).json({ success: true, message: 'Server working fine' });
+	});
+	app.use(routes);
 	app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 	app.use((err, req, res, next) => {
 		res.status(500).json({ error: true, message: err.message });

@@ -11,21 +11,21 @@ export const binance = () => {
 			if (!data || data?.length === 0) {
 				return res.status(404).json({ error: true, message: 'Data not found' });
 			}
-			return res.status(200).json({success: true, data: data})
+			return res.status(200).json({...data});
 		},
 		currentPrice: async (req, res) => {
 			const data = await fetchDataHelper(`${binanceAPI}ticker/price`, req, res);
 			if (!data || data?.length === 0) {
 				return res.status(404).json({ error: true, message: 'Data not found' });
 			}
-			return res.status(200).json({success: true, data: data})
+			return res.status(200).json({...data});
 		},
 		orderBook: async (req, res) => {
 			const data = await fetchDataHelper(`${binanceAPI}depth`, req, res);
 			if (!data || data?.length === 0) {
 				return res.status(404).json({ error: true, message: 'Data not found' });
 			}
-			return res.status(200).json({success: true, data: data})
+			return res.status(200).json({...data});
 		},
 	};
 };
