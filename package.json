@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:check": "npx @biomejs/biome check --write ./src",
-    "dev:server": "npm run dev:check && nodemon start ./src/app.js",
+    "dev:server": "npm run dev:check && nodemon --watch src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "Ascendex Integration Project",
   "dependencies": {
+    "axios": "^1.7.4",
     "base-64": "^1.0.0",
     "body-parser": "^1.20.2",
     "compression": "^1.7.4",
@@ -25,7 +26,6 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "fs-extra": "^11.2.0",
-    "got": "^14.4.2",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",

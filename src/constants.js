@@ -82,3 +82,5 @@ export const AllowedHeaders = [
 	'X-Requested-With',
 	'_xser',
 ];
+
+export const validPlatforms = ['binance', 'ascendex', 'mexc'];

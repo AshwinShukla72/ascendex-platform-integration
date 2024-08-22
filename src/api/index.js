@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import ascendex from './ascendex/index.js'
+import markets from './v1/markets/index.js';
 const router = new Router();
 
-router.use('/ascendex', ascendex)
+router.use('/v1/markets', markets);
 
-export default router
+export default router;
