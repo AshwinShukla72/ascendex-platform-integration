@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:check": "npx @biomejs/biome check --fix --unsafe ./src",
-    "dev:server": "npm run dev:check && nodemon --watch src",
+    "dev:server": "npm run dev:check & npm run gen:docs && nodemon --watch ./src",
     "gen:docs": "node ./src/services/swagger/swagger.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -4,8 +4,12 @@ export const fetchDataHelper = async (url, query, res) => {
 	const functionName = 'fetchDataHelper';
 	try {
 		const apiConfig = {
-			url: `${url}?${new URLSearchParams(query).toString()}`,
+			url, //: `${url}?${new URLSearchParams(query).toString()}`,
 			method: 'GET',
+			params: { ...query },
+			headers: {
+				accept: 'application/json',
+			},
 		};
 		console.log('Request Config -->', apiConfig);
 		const response = await axios(apiConfig);
