@@ -3,15 +3,14 @@ import axios from 'axios';
 export const fetchDataHelper = async (url, query, res) => {
 	const functionName = 'fetchDataHelper';
 	try {
+		console.log('Url -->', url);
+		console.log('Query -->', query);
 		const apiConfig = {
 			url, //: `${url}?${new URLSearchParams(query).toString()}`,
 			method: 'GET',
 			params: { ...query },
-			headers: {
-				accept: 'application/json',
-			},
 		};
-		console.log('Request Config -->', apiConfig);
+		// console.log('Request Config -->', apiConfig);
 		const response = await axios(apiConfig);
 		if (!response.data || response.data.length === 0) {
 			return { error: true, message: 'Data not found' };

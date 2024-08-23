@@ -84,4 +84,4 @@ export const AllowedHeaders = [
 ];
 
 export const validPlatforms = ['binance', 'ascendex', 'mexc'];
-export const validIntervals = ['1s', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h'];
+export const validIntervals = ['1', '1s', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h'];
