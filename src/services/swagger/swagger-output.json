@@ -24,6 +24,11 @@
 						"name": "symbol",
 						"in": "query",
 						"type": "string"
+					},
+					{
+						"name": "interval",
+						"in": "query",
+						"type": "string"
 					}
 				],
 				"responses": {
@@ -48,6 +53,11 @@
 						"name": "symbol",
 						"in": "query",
 						"type": "string"
+					},
+					{
+						"name": "interval",
+						"in": "query",
+						"type": "string"
 					}
 				],
 				"responses": {
@@ -70,6 +80,11 @@
 					},
 					{
 						"name": "symbol",
+						"in": "query",
+						"type": "string"
+					},
+					{
+						"name": "interval",
 						"in": "query",
 						"type": "string"
 					}
